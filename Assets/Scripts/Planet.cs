@@ -5,13 +5,29 @@ using UnityEngine.UI;
 
 public class Planet : MonoBehaviour {
 
-	[SerializeField] int maxPeople = 0;
-	[SerializeField] int currentPeople = 0;
+	[SerializeField] public int maxPeople = 0;
+	[SerializeField] public int currentPeople = 0;
 	[SerializeField] Slider mySlider;
 
-	void Awake(){
+    public GameObject OrbitCenter;
+
+    [Tooltip("Orbitatng speed, in units/second")]
+    [Range(0, 100)]
+    public float Speed;
+
+    void Awake(){
 		mySlider.maxValue = maxPeople;
 	}
+
+    void Start()
+    {
+        OrbitCenter = GameObject.FindWithTag("Earth");
+    }
+
+    void Update()
+    {
+        transform.RotateAround(OrbitCenter.transform.position, Vector3.up, Speed * Time.deltaTime);
+    }
 
 	void OnCollisionEnter(Collision other){
 
@@ -20,7 +36,6 @@ public class Planet : MonoBehaviour {
 			UpdatePeopleCounter ();
 			Destroy (other.gameObject);
 			SpawnHuman ();
-	
 		}
 	}
 

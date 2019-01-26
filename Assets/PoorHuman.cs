@@ -33,7 +33,15 @@ public class PoorHuman : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         //if its a planet assign the radious
-        if (other.tag == "Planet" || other.tag == "Earth")
+        if (other.tag == "Planet")
+        {
+            //make sure that they are only affected by gravity if the planet is not full
+            Planet closePlanet = other.gameObject.GetComponent<Planet>();
+            if (closePlanet.currentPeople < closePlanet.maxPeople)
+            {
+                atractingPlanet = other.gameObject;
+            }
+        } else if (other.tag == "Earth")
         {
             atractingPlanet = other.gameObject;
         }

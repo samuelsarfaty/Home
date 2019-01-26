@@ -105,9 +105,10 @@ GameObject:
   - component: {fileID: 4860044271565584}
   - component: {fileID: 135592870640651556}
   - component: {fileID: 114794050228420008}
+  - component: {fileID: 135995892088169882}
   m_Layer: 0
   m_Name: Planet1
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -414,6 +415,8 @@ MonoBehaviour:
   maxPeople: 5
   currentPeople: 0
   mySlider: {fileID: 114346212119833156}
+  OrbitCenter: {fileID: 0}
+  Speed: 2
 --- !u!135 &135592870640651556
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -425,6 +428,18 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1.05
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &135995892088169882
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1303093574223770}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!222 &222346503997075664
 CanvasRenderer:
