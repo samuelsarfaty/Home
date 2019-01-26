@@ -88,8 +88,10 @@ public class UFO : MonoBehaviour {
             GameObject shootedPassenger = Instantiate(ShootedHuman, transform.position + (RandomDirection * UFORadious), transform.rotation);
             Rigidbody passengerRigidbody = shootedPassenger.GetComponent<Rigidbody>();
             passengerRigidbody.AddForce(RandomDirection * ShootingSpeed);
-            passengers = 0;
+            
         }
+
+        passengers = 0;
     }
 
 }

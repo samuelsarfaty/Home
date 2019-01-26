@@ -8,7 +8,15 @@ public class PoorHuman : MonoBehaviour {
 
     public GameObject atractingPlanet;
 
+    public float EarthGravity;
+
+    public float PlanetGravity;
+
     public float gravity;
+
+    private SphereCollider[] sCollider;
+
+    private float radius;
 	// Use this for initialization
 	void Start () {
 		HumanRigidbody = GetComponent<Rigidbody>();
@@ -26,6 +34,12 @@ public class PoorHuman : MonoBehaviour {
 
             //Apply the force
             HumanRigidbody.AddForce(directionToplanet * gravity);
+
+            //check that its still in orbit, otherwise ignore its gravity
+            if (Vector3.Distance(transform.position, atractingPlanet.transform.position) > radius)
+            {
+                atractingPlanet = null;
+            }
         }
 	}
 
@@ -40,10 +54,25 @@ public class PoorHuman : MonoBehaviour {
             if (closePlanet.currentPeople < closePlanet.maxPeople)
             {
                 atractingPlanet = other.gameObject;
+                gravity = PlanetGravity;
+                sCollider = other.gameObject.GetComponents<SphereCollider>();
+                radius = Mathf.Max(sCollider[0].radius, sCollider[1].radius);
             }
         } else if (other.tag == "Earth")
         {
             atractingPlanet = other.gameObject;
+            gravity = EarthGravity;
+            sCollider = other.gameObject.GetComponents<SphereCollider>();
+            radius = Mathf.Max(sCollider[0].radius, sCollider[1].radius);
+
+            Debug.Log("Radius = " + radius);
         }
+
+        //Get radious of attraction (with wrong scalated objects it doesnt work well, this fixes it)
+        if(radius < 5)
+        {
+            radius = 13;
+        }
+
     }
 }
