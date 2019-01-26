@@ -25,6 +25,7 @@ public class Planet : MonoBehaviour {
     void Start()
     {
         OrbitCenter = GameObject.FindWithTag("Earth");
+        gManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
     }
 
     void Update()
@@ -37,7 +38,12 @@ public class Planet : MonoBehaviour {
 		if (other.gameObject.tag == "Human" && currentPeople < maxPeople) {
             //Add score to the Game manager
             gManager.Score += pointsPerHuman;
-			currentPeople++;
+
+            //Take the people out from earth population (We dont want them to just shoot peolpe into space, so they only get the reward if people land on a new planet)
+            gManager.NumberOfHumans -= pointsPerHuman;
+
+            //Handle the maximum people on the planet stuff
+            currentPeople++;
 			UpdatePeopleCounter ();
 			Destroy (other.gameObject);
 			SpawnHuman ();
