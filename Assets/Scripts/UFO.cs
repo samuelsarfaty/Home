@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UFO : MonoBehaviour {
+public class UFO : MonoBehaviour
+{
 
     [Header("Physics")]
     public Rigidbody UFORigidbody;
@@ -10,10 +11,6 @@ public class UFO : MonoBehaviour {
     [Tooltip("Speed when moving forward, in units/second")]
     [Range(0, 100)]
     public float Speed = 50;
-
-    [Tooltip("Torque applied when rotating, in Netwon*metre")]
-    [Range(0, 100)]
-    public float Torque = 1;
 
     [Tooltip("Max number of passengers that you can carry at the same time")]
     [Range(0, 100)]
@@ -25,13 +22,14 @@ public class UFO : MonoBehaviour {
     [Range(0, 500)]
     public float ShootingSpeed;
 
-    private GameObject Earth;
-
     public GameObject ShootedHuman;
+
+    public GameObject Cannon;
+
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         UFORigidbody = GetComponent<Rigidbody>();
-        Earth = GameObject.FindWithTag("Earth");
     }
 
     void Update()
@@ -59,7 +57,16 @@ public class UFO : MonoBehaviour {
         float horizontal = Input.GetAxis("Horizontal");
         if (horizontal != 0)
         {
-            UFORigidbody.AddTorque(transform.up * horizontal * Torque);
+            UFORigidbody.AddForce(transform.right * horizontal * Speed);
+        }
+
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out hit, 100.0f, 1 << 10))
+        {
+            print("Here");
+            Vector3 point = new Vector3(hit.point.x, Cannon.transform.position.y, hit.point.z);
+            Cannon.transform.LookAt(point);
         }
     }
 
@@ -93,5 +100,4 @@ public class UFO : MonoBehaviour {
 
         passengers = 0;
     }
-
 }
