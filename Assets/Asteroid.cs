@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OrbitatingObject : MonoBehaviour {
+public class Asteroid : MonoBehaviour {
 
     public GameObject OrbitCenter;
 
@@ -11,12 +11,14 @@ public class OrbitatingObject : MonoBehaviour {
     public float Speed = 50;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         OrbitCenter = GameObject.FindWithTag("Earth");
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         //Rotate function
         transform.RotateAround(OrbitCenter.transform.position, Vector3.up, Speed * Time.deltaTime);
     }
