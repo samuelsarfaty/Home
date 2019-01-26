@@ -114,7 +114,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HumanRigidbody: {fileID: 0}
   atractingPlanet: {fileID: 0}
-  gravity: 0.5
+  EarthGravity: 5
+  PlanetGravity: 5
+  gravity: 100
 --- !u!135 &135025628569794696
 SphereCollider:
   m_ObjectHideFlags: 1

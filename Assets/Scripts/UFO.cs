@@ -8,12 +8,15 @@ public class UFO : MonoBehaviour
     [Header("Physics")]
     public Rigidbody UFORigidbody;
 
+    public GameObject Earth;
+
     [Tooltip("Speed when moving forward, in units/second")]
     [Range(0, 100)]
     public float Speed = 50;
 
     [Tooltip("Max number of passengers that you can carry at the same time")]
     [Range(0, 100)]
+    public int maxPassengers;
     public int passengers;
 
     public float UFORadious;
@@ -30,12 +33,16 @@ public class UFO : MonoBehaviour
     void Start()
     {
         UFORigidbody = GetComponent<Rigidbody>();
+        Earth = GameObject.FindWithTag("Earth");
+
     }
 
     void Update()
     {
         //Check if shooting
         Shoot();
+        //Check if close enought to earth to reload
+        ReloadHumans();
     }
 
     //Update used for physics. User controlls
@@ -99,5 +106,13 @@ public class UFO : MonoBehaviour
         }
 
         passengers = 0;
+    }
+
+    public void ReloadHumans()
+    {
+        if (Vector3.Distance(Earth.transform.position, transform.position) < 13)
+        {
+            passengers = maxPassengers;
+        }
     }
 }

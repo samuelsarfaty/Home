@@ -336,8 +336,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UFORigidbody: {fileID: 54646353073929686}
+  Earth: {fileID: 0}
   Speed: 20
-  passengers: 100
+  maxPassengers: 10
+  passengers: 0
   UFORadious: 0
   ShootingSpeed: 500
   ShootedHuman: {fileID: 1318822423765450, guid: fac91e02fe8763a4aa3c0eb4432d1a44,
