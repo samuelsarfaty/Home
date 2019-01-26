@@ -24,17 +24,12 @@ public class Planet : MonoBehaviour {
 
     void Start()
     {
-<<<<<<< HEAD
-        //OrbitCenter = GameObject.FindWithTag("Earth");
-=======
-        gManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
         OrbitCenter = GameObject.FindWithTag("Earth");
->>>>>>> c438fac4b79551eb91d3bd0cc70a07c61aea4dce
     }
 
     void Update()
     {
-        //transform.RotateAround(OrbitCenter.transform.position, Vector3.up, Speed * Time.deltaTime);
+        transform.RotateAround(OrbitCenter.transform.position, Vector3.up, Speed * Time.deltaTime);
     }
 
 	void OnCollisionEnter(Collision other){
