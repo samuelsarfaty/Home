@@ -87,8 +87,12 @@ public class UFO : MonoBehaviour
             {
                 GameObject shootedPassenger = Instantiate(ShootedHuman, SpawnPoint.position, SpawnPoint.rotation);
                 Rigidbody passengerRigidbody = shootedPassenger.GetComponent<Rigidbody>();
-                passengerRigidbody.AddForce(SpawnPoint.forward * ShootingSpeed);
+                Rigidbody rb = GetComponent<Rigidbody>();
+                Vector3 CurrentVelocity = rb.velocity;
+                print(CurrentVelocity);
+                passengerRigidbody.AddForce((SpawnPoint.forward) * ShootingSpeed, ForceMode.Impulse);
                 passengers--;
+                rb.AddForce((-SpawnPoint.forward) * (ShootingSpeed/10), ForceMode.Impulse);
             }
 
         }
