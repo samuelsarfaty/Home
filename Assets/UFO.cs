@@ -19,12 +19,25 @@ public class UFO : MonoBehaviour {
     [Range(0, 100)]
     public int passengers;
 
-	// Use this for initialization
-	void Start () {
+    public float UFORadious;
+
+    [Tooltip("Shooting speed of the humans")]
+    [Range(0, 500)]
+    public float ShootingSpeed;
+
+    public GameObject ShootedHuman;
+    // Use this for initialization
+    void Start () {
         UFORigidbody = GetComponent<Rigidbody>();
 	}
 
-    //Update used for physics
+    void Update()
+    {
+        //Check if shooting
+        Shoot();
+    }
+
+    //Update used for physics. User controlls
     private void FixedUpdate()
     {
         /* If the vertical axis is not zero,
@@ -43,9 +56,23 @@ public class UFO : MonoBehaviour {
         float horizontal = Input.GetAxis("Horizontal");
         if (horizontal != 0)
         {
-
             UFORigidbody.AddTorque(transform.up * horizontal);
-            
+        }
+    }
+
+    //Shoot mechanics
+    private void Shoot()
+    {
+        if (Input.GetKeyDown("space"))
+        {
+            if (passengers > 0)
+            {
+                Debug.Log("Shooting");
+                GameObject shootedPassenger = Instantiate(ShootedHuman, transform.position + (transform.forward * UFORadious), transform.rotation);
+                Rigidbody passengerRigidbody = shootedPassenger.GetComponent<Rigidbody>();
+                passengerRigidbody.AddForce(transform.forward * ShootingSpeed);
+                passengers--;
+            }
 
         }
     }
