@@ -56,7 +56,7 @@ public class UFO : MonoBehaviour {
         float horizontal = Input.GetAxis("Horizontal");
         if (horizontal != 0)
         {
-            UFORigidbody.AddTorque(transform.up * horizontal);
+            UFORigidbody.AddTorque(transform.up * horizontal * Torque);
         }
     }
 
@@ -74,6 +74,18 @@ public class UFO : MonoBehaviour {
                 passengers--;
             }
 
+        }
+    }
+
+    public void EjectPassengers()
+    {
+        for (int i = 0; i < passengers; i++)
+        {
+            Vector3 RandomDirection = (new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1)) - transform.position).normalized;
+            GameObject shootedPassenger = Instantiate(ShootedHuman, transform.position + (RandomDirection * UFORadious), transform.rotation);
+            Rigidbody passengerRigidbody = shootedPassenger.GetComponent<Rigidbody>();
+            passengerRigidbody.AddForce(RandomDirection * ShootingSpeed);
+            passengers = 0;
         }
     }
 }

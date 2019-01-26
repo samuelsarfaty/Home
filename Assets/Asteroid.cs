@@ -48,6 +48,13 @@ public class Asteroid : MonoBehaviour
             Vector3 directionHit = hitObject.gameObject.transform.position - transform.position;
             hitObject.AddForce(directionHit * HitStrength);
             applyForce = false;
+
+            //make it expell all the passengers
+            if (hitObject.gameObject.tag == "UFO")
+            {
+                UFO ufoObject = hitObject.gameObject.GetComponent<UFO>();
+                ufoObject.EjectPassengers();
+            }
         }
     }
 
