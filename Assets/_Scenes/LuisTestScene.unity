@@ -286,27 +286,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4223037147545218, guid: ff95bcafa1416c54aaf707a625302039, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 41.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4223037147545218, guid: ff95bcafa1416c54aaf707a625302039, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -55.69
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4223037147545218, guid: ff95bcafa1416c54aaf707a625302039, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0.43535808
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4223037147545218, guid: ff95bcafa1416c54aaf707a625302039, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.0000037078382
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4223037147545218, guid: ff95bcafa1416c54aaf707a625302039, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.0000017968349
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4223037147545218, guid: ff95bcafa1416c54aaf707a625302039, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.90025747
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4223037147545218, guid: ff95bcafa1416c54aaf707a625302039, type: 2}
       propertyPath: m_RootOrder
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 1419761528}
   - component: {fileID: 1419761527}
   m_Layer: 0
-  m_Name: Planet
+  m_Name: Asteroid
   m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -449,6 +449,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f42427dc13a7bf4b8559d72c81a5c72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OrbitCenter: {fileID: 0}
+  Speed: 50
+  HitStrength: 1500
 --- !u!135 &1419761528
 SphereCollider:
   m_ObjectHideFlags: 0
