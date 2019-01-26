@@ -25,11 +25,14 @@ public class UFO : MonoBehaviour {
     [Range(0, 500)]
     public float ShootingSpeed;
 
+    private GameObject Earth;
+
     public GameObject ShootedHuman;
     // Use this for initialization
     void Start () {
         UFORigidbody = GetComponent<Rigidbody>();
-	}
+        Earth = GameObject.FindWithTag("Earth");
+    }
 
     void Update()
     {
@@ -88,4 +91,5 @@ public class UFO : MonoBehaviour {
             passengers = 0;
         }
     }
+
 }
