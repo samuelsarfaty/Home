@@ -197,8 +197,8 @@ Rigidbody:
   m_GameObject: {fileID: 1270808157587124}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 5
+  m_AngularDrag: 5
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -235,11 +235,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UFORigidbody: {fileID: 54646353073929686}
   Speed: 50
-  Torque: 1
+  Torque: 20
   passengers: 100
-  UFORadious: 0
+  UFORadious: 2
   ShootingSpeed: 500
-  ShootedHuman: {fileID: 0}
+  ShootedHuman: {fileID: 1318822423765450, guid: fac91e02fe8763a4aa3c0eb4432d1a44,
+    type: 2}
 --- !u!135 &135877313392418912
 SphereCollider:
   m_ObjectHideFlags: 1

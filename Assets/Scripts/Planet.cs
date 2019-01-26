@@ -8,7 +8,8 @@ public class Planet : MonoBehaviour {
 	[SerializeField] public int maxPeople = 0;
 	[SerializeField] public int currentPeople = 0;
     [SerializeField] long pointsPerHuman;
-    [SerializeField] Slider mySlider;
+    //[SerializeField] Slider mySlider;
+	[SerializeField] Text myText;
 
     public GameManager gManager;
 
@@ -19,7 +20,8 @@ public class Planet : MonoBehaviour {
     public float Speed;
 
     void Awake(){
-		mySlider.maxValue = maxPeople;
+		//mySlider.maxValue = maxPeople;
+		myText.text = "0" + "/" + maxPeople.ToString();
 	}
 
     void Start()
@@ -51,7 +53,8 @@ public class Planet : MonoBehaviour {
 	}
 
 	void UpdatePeopleCounter(){
-		mySlider.value = currentPeople;
+		//mySlider.value = currentPeople;
+		myText.text = currentPeople.ToString() + "/" + maxPeople.ToString();
 	}
 
 	void SpawnHuman(){
