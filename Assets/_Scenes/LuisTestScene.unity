@@ -305,7 +305,11 @@ MonoBehaviour:
   UFORigidbody: {fileID: 0}
   Speed: 50
   Torque: 5
-  passengers: 0
+  passengers: 100
+  UFORadious: 1
+  ShootingSpeed: 200
+  ShootedHuman: {fileID: 1318822423765450, guid: fac91e02fe8763a4aa3c0eb4432d1a44,
+    type: 2}
 --- !u!65 &1147547948
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -387,7 +391,7 @@ GameObject:
   - component: {fileID: 1419761527}
   m_Layer: 0
   m_Name: Planet
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -404,6 +408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OrbitCenter: {fileID: 0}
+  Speed: 50
 --- !u!135 &1419761528
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -482,9 +487,10 @@ GameObject:
   - component: {fileID: 2145673040}
   - component: {fileID: 2145673039}
   - component: {fileID: 2145673038}
+  - component: {fileID: 2145673042}
   m_Layer: 0
   m_Name: Earth!!
-  m_TagString: Untagged
+  m_TagString: Earth
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -556,3 +562,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &2145673042
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2145673037}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.77
+  m_Center: {x: 0, y: 0, z: 0}

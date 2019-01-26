@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23663314869904572}
   - component: {fileID: 135025628569794696}
   - component: {fileID: 54888912594232298}
+  - component: {fileID: 114163144992965330}
   m_Layer: 0
   m_Name: ShootedHuman
   m_TagString: Untagged
@@ -92,14 +93,28 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1318822423765450}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0.8
-  m_AngularDrag: 0.8
+  m_Mass: 0.5
+  m_Drag: 0.2
+  m_AngularDrag: 0.2
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114163144992965330
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1318822423765450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d9eced5aec4d654095da563760281ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HumanRigidbody: {fileID: 0}
+  atractingPlanet: {fileID: 0}
+  gravity: 0.5
 --- !u!135 &135025628569794696
 SphereCollider:
   m_ObjectHideFlags: 1
