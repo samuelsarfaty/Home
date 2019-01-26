@@ -414,7 +414,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxPeople: 5
   currentPeople: 0
+  pointsPerHuman: 100000000
   mySlider: {fileID: 114346212119833156}
+  gManager: {fileID: 0}
   OrbitCenter: {fileID: 0}
   Speed: 2
 --- !u!135 &135592870640651556

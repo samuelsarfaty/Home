@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour {
 
     public long MaxNHumans;
 
-    public int Score;
+    public long Score;
 
     public int secondsToDieRatio;
 
