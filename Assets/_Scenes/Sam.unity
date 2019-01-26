@@ -437,6 +437,10 @@ Prefab:
       propertyPath: m_Name
       value: Planet1 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1303093574223770, guid: 46b224d110fd85f42b597287074a5221, type: 2}
+      propertyPath: m_TagString
+      value: Earth
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46b224d110fd85f42b597287074a5221, type: 2}
   m_IsPrefabAsset: 0
@@ -690,27 +694,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4223037147545218, guid: ff95bcafa1416c54aaf707a625302039, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 41.4
       objectReference: {fileID: 0}
     - target: {fileID: 4223037147545218, guid: ff95bcafa1416c54aaf707a625302039, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -32.8
       objectReference: {fileID: 0}
     - target: {fileID: 4223037147545218, guid: ff95bcafa1416c54aaf707a625302039, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.43535808
       objectReference: {fileID: 0}
     - target: {fileID: 4223037147545218, guid: ff95bcafa1416c54aaf707a625302039, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.0000037078382
       objectReference: {fileID: 0}
     - target: {fileID: 4223037147545218, guid: ff95bcafa1416c54aaf707a625302039, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.0000017968349
       objectReference: {fileID: 0}
     - target: {fileID: 4223037147545218, guid: ff95bcafa1416c54aaf707a625302039, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.90025747
       objectReference: {fileID: 0}
     - target: {fileID: 4223037147545218, guid: ff95bcafa1416c54aaf707a625302039, type: 2}
       propertyPath: m_RootOrder
