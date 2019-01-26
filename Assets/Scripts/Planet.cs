@@ -7,7 +7,10 @@ public class Planet : MonoBehaviour {
 
 	[SerializeField] public int maxPeople = 0;
 	[SerializeField] public int currentPeople = 0;
-	[SerializeField] Slider mySlider;
+    [SerializeField] long pointsPerHuman;
+    [SerializeField] Slider mySlider;
+
+    public GameManager gManager;
 
     public GameObject OrbitCenter;
 
@@ -21,7 +24,12 @@ public class Planet : MonoBehaviour {
 
     void Start()
     {
+<<<<<<< HEAD
         //OrbitCenter = GameObject.FindWithTag("Earth");
+=======
+        gManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+        OrbitCenter = GameObject.FindWithTag("Earth");
+>>>>>>> c438fac4b79551eb91d3bd0cc70a07c61aea4dce
     }
 
     void Update()
@@ -32,6 +40,8 @@ public class Planet : MonoBehaviour {
 	void OnCollisionEnter(Collision other){
 
 		if (other.gameObject.tag == "Human" && currentPeople < maxPeople) {
+            //Add score to the Game manager
+            gManager.Score += pointsPerHuman;
 			currentPeople++;
 			UpdatePeopleCounter ();
 			Destroy (other.gameObject);
