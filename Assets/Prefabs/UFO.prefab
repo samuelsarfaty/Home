@@ -68,10 +68,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4692254289086994}
-  - component: {fileID: 33109910548522246}
-  - component: {fileID: 23176400458107854}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -229,7 +227,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1473469083536246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5.1}
+  m_LocalPosition: {x: 0, y: 0, z: 3.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4159774138709246}
@@ -249,48 +247,6 @@ Transform:
   m_Father: {fileID: 4061602480362870}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23176400458107854
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1473469083536246}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &33109910548522246
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1473469083536246}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &54646353073929686
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -340,11 +296,12 @@ MonoBehaviour:
   Speed: 20
   maxPassengers: 10
   passengers: 0
-  UFORadious: 0
+  UFORadious: 2
   ShootingSpeed: 500
   ShootedHuman: {fileID: 1318822423765450, guid: fac91e02fe8763a4aa3c0eb4432d1a44,
     type: 2}
   Cannon: {fileID: 1522685988036872}
+  SpawnPoint: {fileID: 4692254289086994}
 --- !u!135 &135877313392418912
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -29,6 +29,8 @@ public class UFO : MonoBehaviour
 
     public GameObject Cannon;
 
+    public Transform SpawnPoint;
+
     // Use this for initialization
     void Start()
     {
@@ -71,7 +73,6 @@ public class UFO : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, 100.0f, 1 << 10))
         {
-            print("Here");
             Vector3 point = new Vector3(hit.point.x, Cannon.transform.position.y, hit.point.z);
             Cannon.transform.LookAt(point);
         }
@@ -80,14 +81,13 @@ public class UFO : MonoBehaviour
     //Shoot mechanics
     private void Shoot()
     {
-        if (Input.GetKeyDown("space"))
+        if ( Input.GetMouseButtonDown (0)) 
         {
             if (passengers > 0)
             {
-                Debug.Log("Shooting");
-                GameObject shootedPassenger = Instantiate(ShootedHuman, transform.position + (transform.forward * UFORadious), transform.rotation);
+                GameObject shootedPassenger = Instantiate(ShootedHuman, SpawnPoint.position, SpawnPoint.rotation);
                 Rigidbody passengerRigidbody = shootedPassenger.GetComponent<Rigidbody>();
-                passengerRigidbody.AddForce(transform.forward * ShootingSpeed);
+                passengerRigidbody.AddForce(SpawnPoint.forward * ShootingSpeed);
                 passengers--;
             }
 
