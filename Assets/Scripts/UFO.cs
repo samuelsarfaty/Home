@@ -92,7 +92,7 @@ public class UFO : MonoBehaviour
                 print(CurrentVelocity);
                 passengerRigidbody.AddForce((SpawnPoint.forward) * ShootingSpeed, ForceMode.Impulse);
                 passengers--;
-                rb.AddForce((-SpawnPoint.forward) * (ShootingSpeed/10), ForceMode.Impulse);
+                rb.AddForce((-SpawnPoint.forward) * (ShootingSpeed/2), ForceMode.Impulse);
             }
 
         }
